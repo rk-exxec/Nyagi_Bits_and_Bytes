@@ -1,13 +1,12 @@
 package net.madelyn.nyagibits_bytes.fluid;
 
-import com.mojang.math.Vector3f;
 import net.madelyn.nyagibits_bytes.NyagiBits_Bytes;
+import net.madelyn.nyagibits_bytes.block.ModBlocks;
+import net.madelyn.nyagibits_bytes.item.ItemInfo;
+import net.madelyn.nyagibits_bytes.item.ModItems;
 import net.madelyn.nyagibits_bytes.misc.Utils;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.common.SoundAction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -21,6 +20,7 @@ public class ModFluids {
     public static final DeferredRegister<FluidType> FLUID_TYPES =
             DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, NyagiBits_Bytes.MOD_ID);
 
+
     //These are just some commonly used vanilla resourcelocations.
     public static final ResourceLocation WATER_STILL_RL = new ResourceLocation("block/water_still");
     public static final ResourceLocation WATER_FLOWING_RL = new ResourceLocation("block/water_flow");
@@ -28,296 +28,104 @@ public class ModFluids {
     public static final ResourceLocation LAVA_FLOWING_RL = new ResourceLocation("block/lava_flow");
 
     /*
-    Each FluidInfo.Builder creates everything necessary to register one (1) fluid. Fun, right?
+    Each FluidInfo.Builder creates everything necessary to register one fluid
     It builds all the parameters necessary to register a still fluid, a flowing fluid and a fluid type.
-    NOTE: The fluid block and fluid bucket should be registered in ModBlocks and ModItems respectively!
-    The first block will be documented for reference, to add more fluids, copy-paste one block and change the values.
+    Builder methods are available to set whichever properties are needed, but pretty much everything has a default value.
+    For info on the default values, or the available builder methods, see the FluidInfo.Builder class.
      */
 
-    private static final List<FluidInfo> FLUIDS_LIST = List.of(
+    private static final List<FluidInfo.Builder> FLUIDS_LIST = List.of(
         //Hydrocarbon Tar - Added 6/25/24
-        //Registry IDs in order of still fluid, flowing fluid and fluid type.
-        //You will need the source fluid ID to register the block and bucket.
-        new FluidInfo.Builder("hydrocarbon_tar_fluid", "flowing_hydrocarbon_tar", "hydrocarbon_tar_fluid")
-                //The texture of still fluid (ResourceLocation)
+        new FluidInfo.Builder("hydrocarbon_tar", 0xff141414)
                 .setStillTexture(LAVA_STILL_RL)
-                //The texture of flowing fluid (ResourceLocation)
                 .setFlowingTexture(LAVA_FLOWING_RL)
-                //The gui overlay when submerged (ResourceLocation)
-                .setOverlayTexture(Utils.NBNB("misc/in_hydrocarbon_tar"))
-                //The color of the fluid (This is an int, actually)
-                .setTint(0xff141414)
-                //The color of the fog when the camera is submerged. this is the default value and could be left out if needed.
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                //Block of fluid properties needed to register the fluids themselves. There are more methods than shown here.
-                .setFluidProperties(properties -> {
-                    //Flow properties
-                    properties.slopeFindDistance(2)
-                            .levelDecreasePerBlock(2)
-                            //These are the block and bucket registered in ModBlocks and ModItems
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB( "hydrocarbon_tar_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_hydrocarbon_tar")));
-                })
-                //Block of Fluid Type properties. Yes, they are a different thing. Again, there's more methods than this.
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            //I don't actually know what these do.
-                            .density(15)
-                            .viscosity(2)
-                            //Yumby
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                //Finally, this packages everything and returns the new FluidInfo object, ready to be processed.
-                .build(),
+                .setSlopeFindDistance(2)
+                .setLevelDecreasePerBlock(2)
+                .setDensity(15)
+                .setViscosity(2),
         //Raw Wood Vinegar - Added 6/25/24
-        new FluidInfo.Builder("raw_wood_vinegar_fluid", "flowing_raw_wood_vinegar", "raw_wood_vinegar_fluid")
-                .setStillTexture(WATER_STILL_RL)
-                .setFlowingTexture(WATER_FLOWING_RL)
-                .setOverlayTexture(Utils.NBNB("misc/in_raw_wood_vinegar"))
-                .setTint(0xC18a3a0a)
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                .setFluidProperties(properties -> {
-                    properties.slopeFindDistance(4)
-                            .levelDecreasePerBlock(1)
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB("raw_wood_vinegar_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_raw_wood_vinegar")));
-                })
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            .density(5)
-                            .viscosity(5)
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                .build(),
+        new FluidInfo.Builder("raw_wood_vinegar", 0xC18a3a0a)
+                .setSlopeFindDistance(4)
+                .setViscosity(5),
         //Pyroligneous Acid - Added 6/25/24
-        new FluidInfo.Builder("pyroligneous_acid_fluid", "flowing_pyroligneous_acid", "pyroligneous_acid_fluid")
-                .setStillTexture(WATER_STILL_RL)
-                .setFlowingTexture(WATER_FLOWING_RL)
-                .setOverlayTexture(Utils.NBNB("misc/in_pyroligneous_acid"))
-                .setTint(0xA1be8d43)
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                .setFluidProperties(properties -> {
-                    properties.slopeFindDistance(4)
-                            .levelDecreasePerBlock(1)
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB("pyroligneous_acid_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_pyroligneous_acid")));
-                })
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            .density(5)
-                            .viscosity(7)
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                .build(),
+        new FluidInfo.Builder("pyroligneous_acid", 0xA1be8d43)
+                .setSlopeFindDistance(4),
         //Acetone - Added 6/25/24
-        new FluidInfo.Builder("acetone_fluid", "flowing_acetone", "acetone_fluid")
-                .setStillTexture(WATER_STILL_RL)
-                .setFlowingTexture(WATER_FLOWING_RL)
-                .setOverlayTexture(Utils.NBNB("misc/in_acetone"))
-                .setTint(0xA1bbb9b2)
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                .setFluidProperties(properties -> {
-                    properties.slopeFindDistance(3)
-                            .levelDecreasePerBlock(1)
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB("acetone_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_acetone")));
-                })
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            .density(5)
-                            .viscosity(7)
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                .build(),
+        new FluidInfo.Builder("acetone", 0xA1bbb9b2),
         //Gemstone Polish - Added 11/15/24
-        new FluidInfo.Builder("gemstone_polish_fluid", "flowing_gemstone_polish", "gemstone_polish_fluid")
-                .setStillTexture(WATER_STILL_RL)
-                .setFlowingTexture(WATER_FLOWING_RL)
-                .setOverlayTexture(Utils.NBNB("misc/in_gemstone_polish"))
-                .setTint(0xA100b2a9)
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                .setFluidProperties(properties -> {
-                    properties.slopeFindDistance(3)
-                            .levelDecreasePerBlock(1)
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB("gemstone_polish_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_gemstone_polish")));
-                })
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            .density(5)
-                            .viscosity(7)
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                .build(),
+        new FluidInfo.Builder("gemstone_polish", 0xA100b2a9),
         //Molten Skystone - Added 11/15/24
-        new FluidInfo.Builder("molten_skystone_fluid", "flowing_molten_skystone", "molten_skystone_fluid")
+        new FluidInfo.Builder("molten_skystone", 0xff001400)
                 .setStillTexture(LAVA_STILL_RL)
-                .setFlowingTexture(LAVA_FLOWING_RL)
-                .setOverlayTexture(Utils.NBNB("misc/in_molten_skystone"))
-                .setTint(0xff001400)
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                .setFluidProperties(properties -> {
-                    properties.slopeFindDistance(3)
-                            .levelDecreasePerBlock(1)
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB("molten_skystone_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_molten_skystone")));
-                })
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            .density(5)
-                            .viscosity(7)
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                .build(),
+                .setFlowingTexture(LAVA_FLOWING_RL),
         //Heptafluoropropane - Added 11/29/24
-        new FluidInfo.Builder("heptafluoropropane_fluid", "flowing_heptafluoropropane", "heptafluoropropane_fluid")
-                .setStillTexture(WATER_STILL_RL)
-                .setFlowingTexture(WATER_FLOWING_RL)
-                .setOverlayTexture(Utils.NBNB("misc/in_heptafluoropropane"))
-                .setTint(0xA145ff64)
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                .setFluidProperties(properties -> {
-                    properties.slopeFindDistance(3)
-                            .levelDecreasePerBlock(1)
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB("heptafluoropropane_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_heptafluoropropane")));
-                })
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            .density(5)
-                            .viscosity(7)
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                .build(),
+        new FluidInfo.Builder("heptafluoropropane", 0xA145ff64),
         //Amorphous Cellulose - Added 11/29/24
-        new FluidInfo.Builder("amorphous_cellulose_fluid", "flowing_amorphous_cellulose", "amorphous_cellulose_fluid")
-                .setStillTexture(WATER_STILL_RL)
-                .setFlowingTexture(WATER_FLOWING_RL)
-                .setOverlayTexture(Utils.NBNB("misc/in_amorphous_cellulose"))
-                .setTint(0xA4b6432)
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                .setFluidProperties(properties -> {
-                    properties.slopeFindDistance(3)
-                            .levelDecreasePerBlock(1)
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB("amorphous_cellulose_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_amorphous_cellulose")));
-                })
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            .density(5)
-                            .viscosity(7)
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                .build(),
+        new FluidInfo.Builder("amorphous_cellulose", 0xA4b6432),
         //Lithium-Alumino Solution - Added 12/12/24
-        new FluidInfo.Builder("lithium_alumino_solution_fluid", "flowing_lithium_alumino_solution", "lithium_alumino_solution_fluid")
-                .setStillTexture(WATER_STILL_RL)
-                .setFlowingTexture(WATER_FLOWING_RL)
-                .setOverlayTexture(Utils.NBNB("misc/in_lithium_alumino_solution"))
-                .setTint(0xA1c8fa)
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                .setFluidProperties(properties -> {
-                    properties.slopeFindDistance(3)
-                            .levelDecreasePerBlock(1)
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB("lithium_alumino_solution_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_lithium_alumino_solution")));
-                })
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            .density(5)
-                            .viscosity(7)
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                .build(),
+        new FluidInfo.Builder("lithium_alumino_solution", 0xA1c8fa),
         //Tailings - Added 12/12/24
-        new FluidInfo.Builder("tailings_fluid", "flowing_tailings", "tailings_fluid")
-                .setStillTexture(WATER_STILL_RL)
-                .setFlowingTexture(WATER_FLOWING_RL)
-                .setOverlayTexture(Utils.NBNB("misc/in_tailings"))
-                .setTint(0xA4644b32)
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                .setFluidProperties(properties -> {
-                    properties.slopeFindDistance(3)
-                            .levelDecreasePerBlock(1)
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB("tailings_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_tailings")));
-                })
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            .density(5)
-                            .viscosity(7)
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                .build(),
+        new FluidInfo.Builder("tailings", 0xA4644b32),
         //Petroleum - Added 12/12/24
-        new FluidInfo.Builder("petroleum_fluid", "flowing_petroleum", "petroleum_fluid")
-                .setStillTexture(WATER_STILL_RL)
-                .setFlowingTexture(WATER_FLOWING_RL)
-                .setOverlayTexture(Utils.NBNB("misc/in_petroleum"))
-                .setTint(0xA4c89600)
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                .setFluidProperties(properties -> {
-                    properties.slopeFindDistance(3)
-                            .levelDecreasePerBlock(1)
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB("petroleum_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_petroleum")));
-                })
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            .density(5)
-                            .viscosity(7)
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                .build(),
+        new FluidInfo.Builder("petroleum", 0xA4c89600),
         //Heavy Crude Oil - Added 12/12/24
-        new FluidInfo.Builder("heavy_crude_oil_fluid", "flowing_heavy_crude_oil", "heavy_crude_oil_fluid")
-                .setStillTexture(WATER_STILL_RL)
-                .setFlowingTexture(WATER_FLOWING_RL)
-                .setOverlayTexture(Utils.NBNB("misc/in_petroleum"))
-                .setTint(0xA400000a)
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                .setFluidProperties(properties -> {
-                    properties.slopeFindDistance(3)
-                            .levelDecreasePerBlock(1)
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB("heavy_crude_oil_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_heavy_crude_oil")));
-                })
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            .density(5)
-                            .viscosity(7)
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                .build(),
+        new FluidInfo.Builder("heavy_crude_oil", 0xA400000a)
+                //Is this intentional?
+                .setOverlayTexture(Utils.NBNB("misc/in_petroleum")),
         //Endstone-Leach Water - Added 12/12/24
-        new FluidInfo.Builder("endstone_leach_water_fluid", "flowing_endstone_leach_water", "endstone_leach_water_fluid")
-                .setStillTexture(WATER_STILL_RL)
-                .setFlowingTexture(WATER_FLOWING_RL)
-                .setOverlayTexture(Utils.NBNB("misc/in_endstone_leach_water"))
-                .setTint(0xA1326496)
-                .setFogColor(new Vector3f(1f / 255f, 1f / 255f, 1f/255f))
-                .setFluidProperties(properties -> {
-                    properties.slopeFindDistance(3)
-                            .levelDecreasePerBlock(1)
-                            .block(() -> (LiquidBlock) Utils.fetchBlock(Utils.NBNB("endstone_leach_water_block")))
-                            .bucket(() -> Utils.fetchItem(Utils.NBNB("bucket_of_endstone_leach_water")));
-                })
-                .setFluidTypeProperties(properties -> {
-                    properties.lightLevel(2)
-                            .density(5)
-                            .viscosity(7)
-                            .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK);
-                })
-                .build()
-
+        new FluidInfo.Builder("endstone_leach_water", 0xA1326496),
+        // Crude Biodiesel - Added 02/13/25
+        new FluidInfo.Builder("crude_biodiesel", 0xA14f4d0a),
+        // Crude Glycerol - Added 02/13/25
+        new FluidInfo.Builder("crude_glycerol", 0xA1472b19),
+        // Alkaline Technical Grade Glycerol - Added 02/13/25
+        new FluidInfo.Builder("alkaline_technical_glycerol", 0xA1804d2e),
+        // Technical Grade Glycerol - Added 02/13/25
+        new FluidInfo.Builder("technical_glycerol", 0xA1a36e4e),
+        // Colorless Glycerol - Added 02/13/25
+        new FluidInfo.Builder("colorless_glycerol", 0xA1ccc3be),
+        // Odourless Glycerol - Added 02/13/25
+        new FluidInfo.Builder("odourless_glycerol", 0xA1dbd1cc),
+        // Distilled Glycerol - Added 02/13/25
+        new FluidInfo.Builder("distilled_glycerol", 0xA1f5e9e4),
+        // Glycerol - Added 02/13/25
+        new FluidInfo.Builder("glycerol", 0xA1ededed),
+        // Wet Methanol - Added 02/13/25
+        new FluidInfo.Builder("wet_methanol", 0xA1e9b8f5),
+        // Wet Biodiesel - Added 02/13/25
+        new FluidInfo.Builder("wet_biodiesel", 0xA1706e1a),
+        // Crude Plant Oil - Added 02/13/25
+        new FluidInfo.Builder("crude_plant_oil", 0xA17d824d),
+        // Cyclohexanone - Added 02/20/25
+        new FluidInfo.Builder("cyclohexanone", 0xA1aad5cb),
+        // Methylethyl Ketone - Added 02/20/25
+        new FluidInfo.Builder("methylethyl_ketone", 0xA15e9e8f),
+        // Ketone Mixture - Added 02/20/25
+        new FluidInfo.Builder("ketone_mixture", 0xA1b0c484),
+        // Lithium Carboxylate - Added 02/20/25
+        new FluidInfo.Builder("lithium_carboxylate", 0xA1c3b0bb),
+        // t-Butyllithium - Added 02/20/25
+        new FluidInfo.Builder("tert_butyl_lithium", 0xA18c80ae),
+        // t-Butylchloride - Added 02/20/25
+        new FluidInfo.Builder("tert_butyl_chloride", 0xA178aa99),
+        // Methylmagnesium Chloride Solution - Added 02/20/25
+        new FluidInfo.Builder("methylmagnesium_chloride_solution", 0xA1c7d9cd),
+        // Tetrahydrofuran - Added 02/20/25
+        new FluidInfo.Builder("tetrahydrofuran", 0xA1e3c3af),
+        // Formaldehyde - Added 02/20/25
+        new FluidInfo.Builder("formaldehyde", 0xA1d7933a)
     );
 
 
     static {
-        for(FluidInfo info : FLUIDS_LIST){
+        for(FluidInfo.Builder infoBuilder : FLUIDS_LIST){
+            FluidInfo info = infoBuilder.build();
             FLUIDS.register(info.getSourceId(), info.getSourceFluid());
             FLUIDS.register(info.getFlowingId(), info.getFlowingFluid());
             FLUID_TYPES.register(info.getFluidTypeId(), info.getFluidType());
+            ItemInfo.Bucket bucket = info.createBucket();
+            ModItems.ITEMS.register(bucket.getId(), bucket::registerItem);
+            ModBlocks.BLOCKS.register(info.getBlockId(), info.createBlock());
         }
     }
 

@@ -2,7 +2,6 @@ package net.madelyn.nyagibits_bytes.item;
 
 import net.madelyn.nyagibits_bytes.NyagiBits_Bytes;
 import net.madelyn.nyagibits_bytes.item.custom.CustomCurioItem.CurioFlags;
-import net.madelyn.nyagibits_bytes.misc.Utils;
 import net.madelyn.nyagibits_bytes.misc.Utils.Tab;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation;
@@ -99,16 +98,10 @@ public class ModItems {
           new ItemInfo("diamond_shard", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
           // Logic Dud added 8/10/23 - Nyagi
           new ItemInfo("logic_dud", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
-          // Incomplete Logic Dud added 2/21/24 - Nyagi
-          new ItemInfo("incomplete_logic_dud", Type.CUSTOM_TOOLTIP, Tab.SEQUENCE),
           // Calculation Dud added 8/10/23 - Nyagi
           new ItemInfo("calculation_dud", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
-          // Incomplete Calculation Dud added 2/21/24 - Nyagi
-          new ItemInfo("incomplete_calculation_dud", Type.CUSTOM_TOOLTIP, Tab.SEQUENCE),
           // Engineering Dud added 8/10/23 - Nyagi
           new ItemInfo("engineering_dud", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
-          // Incomplete Engineering Dud added 2/21/24 - Nyagi
-          new ItemInfo("incomplete_engineering_dud", Type.CUSTOM_TOOLTIP, Tab.SEQUENCE),
           // Bottle of Anthocyanin added 8/27/23 - Nyagi
           new ItemInfo("bottle_of_anthocyanin", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
           // Bottle of Malic & Citric Acid added 8/27/23 - Nyagi
@@ -427,6 +420,40 @@ public class ModItems {
           new ItemInfo("fossil_resin", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
           // Coprolite (fossilized poop) added 12/12/24 - Nyagi
           new ItemInfo("coprolite", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          // Activated Carbon added 02/13/25 - JJ
+          new ItemInfo("activated_carbon", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          // Saturated Carbon Waste added 02/13/25 - JJ
+          new ItemInfo("saturated_carbon_waste", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          // Carbon Residue added 02/13/25 - JJ
+          new ItemInfo("carbon_residue", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Sample of Methanol added 02/13/25 - JJ
+          new ItemInfo("sample_methanol", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Sample of Cyclohexanone added 02/19/25 - Nyagi
+          new ItemInfo("sample_cyclohexanone", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Sample of Methylethyl Ketone added 02/19/25 - Nyagi
+          new ItemInfo("sample_methylethyl_ketone", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Sample of Ketone Mixture added 02/19/25 - Nyagi
+          new ItemInfo("sample_ketone_mixture", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Sample of Lithium Carboxylate added 02/19/25 - Nyagi
+          new ItemInfo("sample_lithium_carboxylate", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Sample of Tert-Butyl Lithium added 02/19/25 - Nyagi
+          new ItemInfo("sample_tertbutyl_lithium", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Sample of Tert-Butyl Chloride added 02/19/25 - Nyagi
+          new ItemInfo("sample_tertbutyl_chloride", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Sample of Tert-Butyl Alcohol added 02/19/25 - Nyagi
+          new ItemInfo("sample_tertbutyl_alcohol", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Sample of Methylmagnesium Chloride Solution added 02/19/25 - Nyagi
+          new ItemInfo("sample_methylmagnesium_chloride_solution", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Sample of Tetrahydrofuran added 02/19/25 - Nyagi
+          new ItemInfo("sample_tetrahydrofuran", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Sample of Formaldehyde added 02/19/25 - Nyagi
+          new ItemInfo("sample_formaldehyde", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Sample of Methylmagnesium Chloride added 02/19/25 - Nyagi
+          new ItemInfo("sample_methylmagnesium_chloride", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Tert-Butyl Alcohol Dust added 02/20/25 - Nyagi
+          new ItemInfo("tert_butyl_alcohol_dust", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
+          //  Methylmagnesium Chloride Dust added 02/20/25 - Nyagi
+          new ItemInfo("methylmagnesium_chloride_dust", Type.CUSTOM_TOOLTIP, Tab.ITEMS),
 
           //Custom Botania Runes
           // Blank Rune added 3/8/24 - Nyagi
@@ -521,6 +548,64 @@ public class ModItems {
           new ItemInfo("incomplete_me_fluid_cell_housing", Type.ITEM, Tab.SEQUENCE),
           // Incomplete Energy Acceptor added 2/22/24 - Nyagi
           new ItemInfo("incomplete_energy_acceptor", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Logic Dud added 2/21/24 - Nyagi
+          new ItemInfo("incomplete_logic_dud", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Calculation Dud added 2/21/24 - Nyagi
+          new ItemInfo("incomplete_calculation_dud", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Engineering Dud added 2/21/24 - Nyagi
+          new ItemInfo("incomplete_engineering_dud", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Sterilized Quartz Glass Vinegar added 1/4/25 - Nyagi
+          new ItemInfo("incomplete_sterilized_quartz_glass_vinegar", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Sterilized Quartz Glass Phenoxyethanol added 1/4/25 - Nyagi
+          new ItemInfo("incomplete_sterilized_quartz_glass_phenoxyethanol", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Petri Dish Glass added 1/4/25 - Nyagi
+          new ItemInfo("incomplete_petri_dish_glass", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Petri Dish Quartz Glass added 1/4/25 - Nyagi
+          new ItemInfo("incomplete_petri_dish_quartz_glass", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Skystone Shielding added 1/4/25 - Nyagi
+          new ItemInfo("incomplete_skystone_shielding", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Skystone Shielding Boule added 1/4/25 - Nyagi
+          new ItemInfo("incomplete_skystone_shielding_boule", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Clustered Beryl Crude added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_cluster_beryl_crude", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Clustered Beryl Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_cluster_beryl_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Prime Beryl Crude added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_prime_beryl_crude", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Prime Beryl Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_prime_beryl_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Graphite Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_graphite_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Kimberlite Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_kimberlite_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Lamproite Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_lamproite_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Lazurite Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_lazurite_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Lapis Lazuli Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_lapis_lazuli_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Fluorite Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_fluorite_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Rutilated Quartz Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_rutilated_quartz_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Ametrine Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_ametrine_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Rose Quartz Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_rose_quartz_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Prasiolite Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_prasiolite_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Meteoric Certus Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_meteoric_certus_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Turquoise Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_turquoise_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Herkimer Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_herkimer_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Dendritic Agate Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_dendritic_agate_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Chalcedony Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_chalcedony_polish", Type.ITEM, Tab.SEQUENCE),
+          // Incomplete Raw Spinel Polish added 1/5/25 - Nyagi
+          new ItemInfo("incomplete_raw_spinel_polish", Type.ITEM, Tab.SEQUENCE),
 
 
       /*
@@ -661,500 +746,500 @@ public class ModItems {
 
           //Copper
           // Raw Chalcopyrite added 10/1/23 - Nyagi
-          new ItemInfo("raw_chalcopyrite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_chalcopyrite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Chalcopyrite added 12/23/24 - Nyagi
           new ItemInfo("sintered_chalcopyrite", Type.ITEM, Tab.MINERALS),
           // Raw Malachite added 10/1/23 - Nyagi
-          new ItemInfo("raw_malachite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_malachite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Malachite added 12/23/24 - Nyagi
           new ItemInfo("sintered_malachite", Type.ITEM, Tab.MINERALS),
           // Raw Azurite added 10/1/23 - Nyagi
-          new ItemInfo("raw_azurite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_azurite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Azurite added 12/23/24 - Nyagi
           new ItemInfo("sintered_azurite", Type.ITEM, Tab.MINERALS),
           // Raw Tetrahedrite added 10/1/23 - Nyagi
-          new ItemInfo("raw_tetrahedrite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_tetrahedrite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Tetrahedrite added 12/23/24 - Nyagi
           new ItemInfo("sintered_tetrahedrite", Type.ITEM, Tab.MINERALS),
           // Raw Enargite added 10/1/23 - Nyagi
-          new ItemInfo("raw_enargite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_enargite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Enargite added 12/23/24 - Nyagi
           new ItemInfo("sintered_enargite", Type.ITEM, Tab.MINERALS),
           // Raw Chrysocolla added 10/1/23 - Nyagi
-          new ItemInfo("raw_chrysocolla", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_chrysocolla", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Chrysocolla added 12/23/24 - Nyagi
           new ItemInfo("sintered_chrysocolla", Type.ITEM, Tab.MINERALS),
           // Raw Tennanite added 10/1/23 - Nyagi
-          new ItemInfo("raw_tennanite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_tennanite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Tennanite added 12/23/24 - Nyagi
           new ItemInfo("sintered_tennanite", Type.ITEM, Tab.MINERALS),
           // Raw Dioptase added 10/1/23 - Nyagi
-          new ItemInfo("raw_dioptase", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_dioptase", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Dioptase added 12/23/24 - Nyagi
           new ItemInfo("sintered_dioptase", Type.ITEM, Tab.MINERALS),
 
           //Coal
           // Raw Lignite added 10/1/23 - Nyagi
-          new ItemInfo("raw_lignite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_lignite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-mineralized Lignite added 12/23/24 - Nyagi
           new ItemInfo("de_mineralized_lignite", Type.ITEM, Tab.MINERALS),
           // Raw Bituminous added 10/1/23 - Nyagi
-          new ItemInfo("raw_bituminous", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_bituminous", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-mineralized Bituminous added 12/23/24 - Nyagi
           new ItemInfo("de_mineralized_bituminous", Type.ITEM, Tab.MINERALS),
           // Raw Subbituminous added 10/1/23 - Nyagi
-          new ItemInfo("raw_subbituminous", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_subbituminous", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-mineralized Subbituminous added 12/23/24 - Nyagi
           new ItemInfo("de_mineralized_subbituminous", Type.ITEM, Tab.MINERALS),
           // Raw Anthracite added 10/1/23 - Nyagi
-          new ItemInfo("raw_anthracite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_anthracite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-mineralized Anthracite added 12/23/24 - Nyagi
           new ItemInfo("de_mineralized_anthracite", Type.ITEM, Tab.MINERALS),
           // Raw Cannel Coal added 10/1/23 - Nyagi
-          new ItemInfo("raw_cannel_coal", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_cannel_coal", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-mineralized Cannel Coal added 12/23/24 - Nyagi
           new ItemInfo("de_mineralized_cannel_coal", Type.ITEM, Tab.MINERALS),
           // Raw Jet added 10/1/23 - Nyagi
-          new ItemInfo("raw_jet", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_jet", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-mineralized Jet added 12/23/24 - Nyagi
           new ItemInfo("de_mineralized_jet", Type.ITEM, Tab.MINERALS),
           // Raw Peat added 10/1/23 - Nyagi
-          new ItemInfo("raw_peat", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_peat", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Biologically Activated Peat added 12/23/24 - Nyagi
           new ItemInfo("biologically_activated_peat", Type.ITEM, Tab.MINERALS),
           // Raw Graphite added 10/1/23 - Nyagi
-          new ItemInfo("raw_graphite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_graphite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Graphite added 12/23/24 - Nyagi
           new ItemInfo("polished_graphite", Type.ITEM, Tab.MINERALS),
 
           //Gold and Silver
           // Alluvial Slush added 10/1/23 - Nyagi
-          new ItemInfo("alluvial_slush", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("alluvial_slush", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Alluvial Slush added 12/23/24 - Nyagi
           new ItemInfo("sintered_alluvial_slush", Type.ITEM, Tab.MINERALS),
           // Native Cluster added 10/1/23 - Nyagi
-          new ItemInfo("native_cluster", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("native_cluster", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Native Cluster added 12/23/24 - Nyagi
           new ItemInfo("sintered_native_cluster", Type.ITEM, Tab.MINERALS),
           // Raw Argentite added 10/1/23 - Nyagi
-          new ItemInfo("raw_argentite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_argentite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Argentite added 12/23/24 - Nyagi
           new ItemInfo("sintered_argentite", Type.ITEM, Tab.MINERALS),
           // Raw Chlorargyrite added 10/1/23 - Nyagi
-          new ItemInfo("raw_chlorargyrite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_chlorargyrite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Chlorargyrite added 12/23/24 - Nyagi
           new ItemInfo("sintered_chlorargyrite", Type.ITEM, Tab.MINERALS),
           // Raw Polybasite added 10/1/23 - Nyagi
-          new ItemInfo("raw_polybasite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_polybasite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Polybasite added 12/23/24 - Nyagi
           new ItemInfo("sintered_polybasite", Type.ITEM, Tab.MINERALS),
           // Raw Proustite added 10/1/23 - Nyagi
-          new ItemInfo("raw_proustite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_proustite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Proustite added 12/23/24 - Nyagi
           new ItemInfo("sintered_proustite", Type.ITEM, Tab.MINERALS),
           // Raw Electrum added 10/1/23 - Nyagi
-          new ItemInfo("raw_electrum", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_electrum", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Electrum added 12/23/24 - Nyagi
           new ItemInfo("sintered_electrum", Type.ITEM, Tab.MINERALS),
           // Raw Kustelite Electrum added 10/1/23 - Nyagi
-          new ItemInfo("raw_kustelite_electrum", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_kustelite_electrum", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Kustelite Electrum added 12/23/24 - Nyagi
           new ItemInfo("sintered_kustelite_electrum", Type.ITEM, Tab.MINERALS),
 
           //Redstone and Mercury
           // Raw Cinnabar added 10/9/23 - Nyagi
-          new ItemInfo("raw_cinnabar", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_cinnabar", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Cinnabar added 12/23/24 - Nyagi
           new ItemInfo("polished_cinnabar", Type.ITEM, Tab.MINERALS),
           // Raw Metacinnabar added 10/9/23 - Nyagi
-          new ItemInfo("raw_metacinnabar", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_metacinnabar", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Metacinnabar added 12/23/24 - Nyagi
           new ItemInfo("sintered_metacinnabar", Type.ITEM, Tab.MINERALS),
           // Raw Corderoite added 10/9/23 - Nyagi
-          new ItemInfo("raw_corderoite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_corderoite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Corderoite added 12/23/24 - Nyagi
           new ItemInfo("sintered_corderoite", Type.ITEM, Tab.MINERALS),
           // Raw Basaltic Powder added 10/9/23 - Nyagi
-          new ItemInfo("raw_basaltic_powder", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_basaltic_powder", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-mineralized Basaltic Powder added 12/23/24 - Nyagi
           new ItemInfo("de_mineralized_basaltic_powder", Type.ITEM, Tab.MINERALS),
           // Raw Calomel added 10/9/23 - Nyagi
-          new ItemInfo("raw_calomel", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_calomel", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Calomel added 12/23/24 - Nyagi
           new ItemInfo("polished_calomel", Type.ITEM, Tab.MINERALS),
           // Raw Native Mercury Spherules added 10/9/23 - Nyagi
-          new ItemInfo("raw_native_mercury_spherules", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_native_mercury_spherules", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Native Mercury Spherules added 12/24/24 - Nyagi
           new ItemInfo("sintered_native_mercury_spherules", Type.ITEM, Tab.MINERALS),
           // Raw Montroydite added 10/9/23 - Nyagi
-          new ItemInfo("raw_montroydite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_montroydite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Montroydite added 12/24/24 - Nyagi
           new ItemInfo("sintered_montroydite", Type.ITEM, Tab.MINERALS),
           // Raw Granulated Obsidian added 10/9/23 - Nyagi
-          new ItemInfo("raw_granulated_obsidian", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_granulated_obsidian", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-mineralized Granulated Obsidian added 12/23/24 - Nyagi
           new ItemInfo("de_mineralized_granulated_obsidian", Type.ITEM, Tab.MINERALS),
 
           //Crystals and Minerals
           // Raw Kimberlite added 10/9/23 - Nyagi
-          new ItemInfo("raw_kimberlite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_kimberlite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Kimberlite added 12/24/24 - Nyagi
           new ItemInfo("polished_kimberlite", Type.ITEM, Tab.MINERALS),
           // Raw Lamproite added 10/9/23 - Nyagi
-          new ItemInfo("raw_lamproite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_lamproite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Lamproite added 12/24/24 - Nyagi
           new ItemInfo("polished_lamproite", Type.ITEM, Tab.MINERALS),
           // Raw Lazurite added 10/9/23 - Nyagi
-          new ItemInfo("raw_lazurite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_lazurite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Lazurite added 12/24/24 - Nyagi
           new ItemInfo("polished_lazurite", Type.ITEM, Tab.MINERALS),
           // Raw Lapis Lazuli added 10/9/23 - Nyagi
-          new ItemInfo("raw_lapis_lazuli", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_lapis_lazuli", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Lapis Lazuli added 12/24/24 - Nyagi
           new ItemInfo("polished_lapis_lazuli", Type.ITEM, Tab.MINERALS),
           // Raw Prime Beryllic Cluster added 10/9/23 - Nyagi
-          new ItemInfo("raw_prime_beryllic_cluster", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_prime_beryllic_cluster", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Prime Beryllic Cluster added 12/24/24 - Nyagi
           new ItemInfo("polished_prime_beryllic_cluster", Type.ITEM, Tab.MINERALS),
           // Raw Fluorite added 10/9/23 - Nyagi
-          new ItemInfo("raw_fluorite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_fluorite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Fluorite added 12/24/24 - Nyagi
           new ItemInfo("polished_fluorite", Type.ITEM, Tab.MINERALS),
           // Raw Chalcogenide Crystal Cluster added 10/9/23 - Nyagi
-          new ItemInfo("raw_chalcogenide_crystal_cluster", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_chalcogenide_crystal_cluster", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Chalcogenide Crystal Cluster added 12/24/24 - Nyagi
           new ItemInfo("sintered_chalcogenide_crystal_cluster", Type.ITEM, Tab.MINERALS),
           // Raw Salt Cluster added 10/9/23 - Nyagi
-          new ItemInfo("raw_salt_cluster", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_salt_cluster", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-mineralized Salt Cluster added 12/23/24 - Nyagi
           new ItemInfo("de_mineralized_salt_cluster", Type.ITEM, Tab.MINERALS),
 
           //Quartz
           // Raw Herkimer Diamond added 10/13/23 - Nyagi
-          new ItemInfo("raw_herkimer_diamond", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_herkimer_diamond", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Herkimer Diamond added 12/24/24 - Nyagi
           new ItemInfo("polished_herkimer_diamond", Type.ITEM, Tab.MINERALS),
           // Raw Dendritic Agate added 10/13/23 - Nyagi
-          new ItemInfo("raw_dendritic_agate", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_dendritic_agate", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Dendritic Agate added 12/24/24 - Nyagi
           new ItemInfo("polished_dendritic_agate", Type.ITEM, Tab.MINERALS),
           // Raw Chalcedony added 10/13/23 - Nyagi
-          new ItemInfo("raw_chalcedony", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_chalcedony", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Chalcedony added 12/24/24 - Nyagi
           new ItemInfo("polished_chalcedony", Type.ITEM, Tab.MINERALS),
           // Raw Rutilated Quartz added 10/13/23 - Nyagi
-          new ItemInfo("raw_rutilated_quartz", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_rutilated_quartz", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Rutilated Quartz added 12/24/24 - Nyagi
           new ItemInfo("polished_rutilated_quartz", Type.ITEM, Tab.MINERALS),
           // Raw Ametrine added 10/13/23 - Nyagi
-          new ItemInfo("raw_ametrine", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_ametrine", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Ametrine added 12/24/24 - Nyagi
           new ItemInfo("polished_ametrine", Type.ITEM, Tab.MINERALS),
           // Raw Rose Quartz added 10/13/23 - Nyagi
-          new ItemInfo("raw_rose_quartz", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_rose_quartz", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Shiny Rose Quartz added 12/24/24 - Nyagi
           new ItemInfo("polished_rose_quartz", Type.ITEM, Tab.MINERALS),
           // Raw Prasiolite added 10/13/23 - Nyagi
-          new ItemInfo("raw_prasiolite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_prasiolite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Prasiolite added 12/24/24 - Nyagi
           new ItemInfo("polished_prasiolite", Type.ITEM, Tab.MINERALS),
           // Raw Meteoric Certus added 10/13/23 - Nyagi
-          new ItemInfo("raw_meteoric_certus", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_meteoric_certus", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Meteoric Certus added 12/24/24 - Nyagi
           new ItemInfo("polished_meteoric_certus", Type.ITEM, Tab.MINERALS),
 
           //Zinc
           // Raw Zinc Carbonate added 10/13/23 - Nyagi
-          new ItemInfo("raw_zinc_carbonate", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_zinc_carbonate", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Zinc Carbonate added 12/24/24 - Nyagi
           new ItemInfo("sintered_zinc_carbonate", Type.ITEM, Tab.MINERALS),
           // Raw Sphalerite added 10/13/23 - Nyagi
-          new ItemInfo("raw_sphalerite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_sphalerite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Sphalerite added 12/24/24 - Nyagi
           new ItemInfo("sintered_sphalerite", Type.ITEM, Tab.MINERALS),
           // Raw Smithsonite added 10/13/23 - Nyagi
-          new ItemInfo("raw_smithsonite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_smithsonite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Smithsonite added 12/24/24 - Nyagi
           new ItemInfo("sintered_smithsonite", Type.ITEM, Tab.MINERALS),
           // Raw Hemimorphite added 10/13/23 - Nyagi
-          new ItemInfo("raw_hemimorphite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_hemimorphite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Hemimorphite added 12/24/24 - Nyagi
           new ItemInfo("sintered_hemimorphite", Type.ITEM, Tab.MINERALS),
           // Raw Wurtzite added 10/13/23 - Nyagi
-          new ItemInfo("raw_wurtzite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_wurtzite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Wurtzite added 12/24/24 - Nyagi
           new ItemInfo("sintered_wurtzite", Type.ITEM, Tab.MINERALS),
           // Raw Hydrozincite added 10/13/23 - Nyagi
-          new ItemInfo("raw_hydrozincite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_hydrozincite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Hydrozincite added 12/24/24 - Nyagi
           new ItemInfo("sintered_hydrozincite", Type.ITEM, Tab.MINERALS),
           // Raw Willemite added 10/13/23 - Nyagi
-          new ItemInfo("raw_willemite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_willemite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Willemite added 12/24/24 - Nyagi
           new ItemInfo("sintered_willemite", Type.ITEM, Tab.MINERALS),
           // Raw Franklinite added 10/13/23 - Nyagi
-          new ItemInfo("raw_franklinite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_franklinite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Franklinite added 12/24/24 - Nyagi
           new ItemInfo("sintered_franklinite", Type.ITEM, Tab.MINERALS),
 
           //Aluminium
           // Raw Bauxite added 10/13/23 - Nyagi
-          new ItemInfo("raw_bauxite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_bauxite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Bauxite added 12/24/24 - Nyagi
           new ItemInfo("sintered_bauxite", Type.ITEM, Tab.MINERALS),
           // Raw Feldspar added 10/13/23 - Nyagi
-          new ItemInfo("raw_feldspar", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_feldspar", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Feldspar added 12/24/24 - Nyagi
           new ItemInfo("sintered_feldspar", Type.ITEM, Tab.MINERALS),
           // Raw Clustered Beryl added 10/13/23 - Nyagi
-          new ItemInfo("raw_clustered_beryl", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_clustered_beryl", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Clustered Beryl added 12/24/24 - Nyagi
           new ItemInfo("polished_clustered_beryl", Type.ITEM, Tab.MINERALS),
           // Raw Cryolite added 10/13/23 - Nyagi
-          new ItemInfo("raw_cryolite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_cryolite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Cryolite added 12/24/24 - Nyagi
           new ItemInfo("sintered_cryolite", Type.ITEM, Tab.MINERALS),
           // Raw Spinel added 10/13/23 - Nyagi
-          new ItemInfo("raw_spinel", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_spinel", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Spinel added 12/24/24 - Nyagi
           new ItemInfo("polished_spinel", Type.ITEM, Tab.MINERALS),
           // Raw Turquoise added 10/13/23 - Nyagi
-          new ItemInfo("raw_turquoise", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_turquoise", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Polished Turquoise added 12/24/24 - Nyagi
           new ItemInfo("polished_turquoise", Type.ITEM, Tab.MINERALS),
           // Raw Garnet Slush added 10/13/23 - Nyagi
-          new ItemInfo("raw_garnet_slush", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_garnet_slush", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Garnet Slush added 12/24/24 - Nyagi
           new ItemInfo("sintered_garnet_slush", Type.ITEM, Tab.MINERALS),
           // Raw Native Aluminum added 10/13/23 - Nyagi
-          new ItemInfo("raw_native_aluminum", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_native_aluminum", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Native Aluminum added 12/24/24 - Nyagi
           new ItemInfo("sintered_native_aluminum", Type.ITEM, Tab.MINERALS),
 
           //Lead
           //Galena added 10/20/23 - Nyagi
-          new ItemInfo("raw_galena", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_galena", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Galena added 12/24/24 - Nyagi
           new ItemInfo("sintered_galena", Type.ITEM, Tab.MINERALS),
           //Lead Sulphide added 10/20/23 - Nyagi
-          new ItemInfo("raw_lead_sulphide", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_lead_sulphide", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Lead Sulphide added 12/24/24 - Nyagi
           new ItemInfo("sintered_lead_sulphide", Type.ITEM, Tab.MINERALS),
           //Pyromorphite added 10/20/23 - Nyagi
-          new ItemInfo("raw_pyromorphite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_pyromorphite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Pyromorphite added 12/24/24 - Nyagi
           new ItemInfo("sintered_pyromorphite", Type.ITEM, Tab.MINERALS),
           //Cerussite added 10/20/23 - Nyagi
-          new ItemInfo("raw_cerussite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_cerussite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Cerussite added 12/24/24 - Nyagi
           new ItemInfo("sintered_cerussite", Type.ITEM, Tab.MINERALS),
           //Anglesite added 10/20/23 - Nyagi
-          new ItemInfo("raw_anglesite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_anglesite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Anglesite added 12/24/24 - Nyagi
           new ItemInfo("sintered_anglesite", Type.ITEM, Tab.MINERALS),
           //Wulfenite added 10/20/23 - Nyagi
-          new ItemInfo("raw_wulfenite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_wulfenite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Wulfenite added 12/24/24 - Nyagi
           new ItemInfo("sintered_wulfenite", Type.ITEM, Tab.MINERALS),
           //Vanadinite added 10/20/23 - Nyagi
-          new ItemInfo("raw_vanadinite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_vanadinite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Vanadinite added 12/24/24 - Nyagi
           new ItemInfo("sintered_vanadinite", Type.ITEM, Tab.MINERALS),
           //Mimetite added 10/20/23 - Nyagi
-          new ItemInfo("raw_mimetite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_mimetite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Mimetite added 12/24/24 - Nyagi
           new ItemInfo("sintered_mimetite", Type.ITEM, Tab.MINERALS),
 
           //Nickel
           //Pentlandite added 10/27/23 - Nyagi
-          new ItemInfo("raw_pentlandite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_pentlandite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Pentlandite added 12/24/24 - Nyagi
           new ItemInfo("sintered_pentlandite", Type.ITEM, Tab.MINERALS),
           //Garnierite added 10/27/23 - Nyagi
-          new ItemInfo("raw_garnierite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_garnierite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Garnierite added 12/24/24 - Nyagi
           new ItemInfo("sintered_garnierite", Type.ITEM, Tab.MINERALS),
           //Saprolite added 10/27/23 - Nyagi
-          new ItemInfo("raw_saprolite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_saprolite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Saprolite added 12/24/24 - Nyagi
           new ItemInfo("sintered_saprolite", Type.ITEM, Tab.MINERALS),
           //Hardened Sulfide Flow added 10/27/23 - Nyagi
-          new ItemInfo("raw_hardened_sulfide_flow", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_hardened_sulfide_flow", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-Mineralized Hardened Sulfide Flow added 12/24/24 - Nyagi
           new ItemInfo("de_mineralized_hardened_sulfide_flow", Type.ITEM, Tab.MINERALS),
           //Millerite added 10/27/23 - Nyagi
-          new ItemInfo("raw_millerite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_millerite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Millerite added 12/24/24 - Nyagi
           new ItemInfo("sintered_millerite", Type.ITEM, Tab.MINERALS),
           //Nickeline added 10/27/23 - Nyagi
-          new ItemInfo("raw_nickeline", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_nickeline", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Nickeline added 12/24/24 - Nyagi
           new ItemInfo("sintered_nickeline", Type.ITEM, Tab.MINERALS),
           //Meteoric Taenite added 10/27/23 - Nyagi
-          new ItemInfo("raw_meteoric_taenite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_meteoric_taenite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Meteoric Taenite added 12/24/24 - Nyagi
           new ItemInfo("sintered_meteoric_taenite", Type.ITEM, Tab.MINERALS),
           //Meteoric Kamacite added 10/27/23 - Nyagi
-          new ItemInfo("raw_meteoric_kamacite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_meteoric_kamacite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Meteoric Kamacite added 12/24/24 - Nyagi
           new ItemInfo("sintered_meteoric_kamacite", Type.ITEM, Tab.MINERALS),
 
           //Uranium & Thorium
           //Pitchblende added 10/27/23 - Nyagi
-          new ItemInfo("raw_pitchblende", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_pitchblende", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Pitchblende added 12/24/24 - Nyagi
           new ItemInfo("sintered_pitchblende", Type.ITEM, Tab.MINERALS),
           //Carnotite added 10/27/23 - Nyagi
-          new ItemInfo("raw_carnotite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_carnotite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Carnotite added 12/24/24 - Nyagi
           new ItemInfo("sintered_carnotite", Type.ITEM, Tab.MINERALS),
           //Tyuyamunite added 10/27/23 - Nyagi
-          new ItemInfo("raw_tyuyamunite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_tyuyamunite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Tyuyamunite added 12/24/24 - Nyagi
           new ItemInfo("sintered_tyuyamunite", Type.ITEM, Tab.MINERALS),
           //Torbernite added 10/27/23 - Nyagi
-          new ItemInfo("raw_torbernite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_torbernite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Torbernite added 12/24/24 - Nyagi
           new ItemInfo("sintered_torbernite", Type.ITEM, Tab.MINERALS),
           //Autunite added 10/27/23 - Nyagi
-          new ItemInfo("raw_autunite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_autunite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Autunite added 12/24/24 - Nyagi
           new ItemInfo("sintered_autunite", Type.ITEM, Tab.MINERALS),
           //Thorite added 10/27/23 - Nyagi
-          new ItemInfo("raw_thorite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_thorite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Thorite added 12/24/24 - Nyagi
           new ItemInfo("sintered_thorite", Type.ITEM, Tab.MINERALS),
           //Uranothorite added 10/27/23 - Nyagi
-          new ItemInfo("raw_uranothorite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_uranothorite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Uranothorite added 12/24/24 - Nyagi
           new ItemInfo("sintered_uranothorite", Type.ITEM, Tab.MINERALS),
           //Thorianite added 10/27/23 - Nyagi
-          new ItemInfo("raw_thorianite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_thorianite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Thorianite added 12/24/24 - Nyagi
           new ItemInfo("sintered_thorianite", Type.ITEM, Tab.MINERALS),
 
           //Tin
           //Cassiterite added 11/3/23 - Nyagi
-          new ItemInfo("raw_cassiterite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_cassiterite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Cassiterite added 12/24/24 - Nyagi
           new ItemInfo("sintered_cassiterite", Type.ITEM, Tab.MINERALS),
           //Stannite added 11/3/23 - Nyagi
-          new ItemInfo("raw_stannite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_stannite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Stannite added 12/24/24 - Nyagi
           new ItemInfo("sintered_stannite", Type.ITEM, Tab.MINERALS),
           //Cylindrite added 11/3/23 - Nyagi
-          new ItemInfo("raw_cylindrite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_cylindrite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Cylindrite added 12/24/24 - Nyagi
           new ItemInfo("sintered_cylindrite", Type.ITEM, Tab.MINERALS),
           //Franckeite added 11/3/23 - Nyagi
-          new ItemInfo("raw_franckeite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_franckeite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Franckeite added 12/24/24 - Nyagi
           new ItemInfo("sintered_franckeite", Type.ITEM, Tab.MINERALS),
           //Canfieldite added 11/3/23 - Nyagi
-          new ItemInfo("raw_canfieldite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_canfieldite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Canfieldite added 12/24/24 - Nyagi
           new ItemInfo("sintered_canfieldite", Type.ITEM, Tab.MINERALS),
           //Teallite added 11/3/23 - Nyagi
-          new ItemInfo("raw_teallite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_teallite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Teallite added 12/24/24 - Nyagi
           new ItemInfo("sintered_teallite", Type.ITEM, Tab.MINERALS),
           //Brannerite added 11/3/23 - Nyagi
-          new ItemInfo("raw_brannerite", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_brannerite", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Brannerite added 12/24/24 - Nyagi
           new ItemInfo("sintered_brannerite", Type.ITEM, Tab.MINERALS),
           //Orthoclase added 11/3/23 - Nyagi
-          new ItemInfo("raw_orthoclase", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_orthoclase", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Sintered Orthoclase added 12/24/24 - Nyagi
           new ItemInfo("sintered_orthoclase", Type.ITEM, Tab.MINERALS),
 
           //Misc Processing Ores
           //Saltpeter added 11/3/23 - Nyagi
-          new ItemInfo("raw_saltpeter", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_saltpeter", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-Mineralized Saltpeter added 12/24/24 - Nyagi
           new ItemInfo("de_mineralized_saltpeter", Type.ITEM, Tab.MINERALS),
           //Borax added 11/3/23 - Nyagi
-          new ItemInfo("raw_borax", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_borax", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-Mineralized Borax added 12/24/24 - Nyagi
           new ItemInfo("de_mineralized_borax", Type.ITEM, Tab.MINERALS),
           //Compacted Limestone added 11/3/23 - Nyagi
-          new ItemInfo("raw_compacted_limestone", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_compacted_limestone", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-Mineralized Compacted Limestone added 12/24/24 - Nyagi
           new ItemInfo("de_mineralized_compacted_limestone", Type.ITEM, Tab.MINERALS),
           //Volcanic Sulfur added 11/3/23 - Nyagi
-          new ItemInfo("raw_volcanic_sulfur", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_volcanic_sulfur", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-Mineralized Volcanic Sulfur added 12/24/24 - Nyagi
           new ItemInfo("de_mineralized_volcanic_sulfur", Type.ITEM, Tab.MINERALS),
           //Rainbow Obsidian added 11/3/23 - Nyagi
-          new ItemInfo("raw_rainbow_obsidian", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_rainbow_obsidian", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-Mineralized Rainbow Obsidian added 12/24/24 - Nyagi
           new ItemInfo("de_mineralized_rainbow_obsidian", Type.ITEM, Tab.MINERALS),
           //Petrified Wood added 11/3/23 - Nyagi
-          new ItemInfo("raw_petrified_wood", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_petrified_wood", Type.CUSTOM_ORE, Tab.MINERALS),
           //- Biologically Activated Petrified Wood added 12/24/24 - Nyagi
           new ItemInfo("biologically_activated_petrified_wood", Type.ITEM, Tab.MINERALS),
           //Chalk added 11/3/23 - Nyagi
-          new ItemInfo("raw_chalk", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_chalk", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-Mineralized Chalk added 12/24/24 - Nyagi
           new ItemInfo("de_mineralized_chalk", Type.ITEM, Tab.MINERALS),
           //Trona Ore (Baking Soda) added 11/3/23 - Nyagi
-          new ItemInfo("raw_trona", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("raw_trona", Type.CUSTOM_ORE, Tab.MINERALS),
           //- De-Mineralized Trona Ore added 12/24/24 - Nyagi
           new ItemInfo("de_mineralized_trona", Type.ITEM, Tab.MINERALS),
 
           //Immersive Engineering Excavator Ores
           //Carbonate Igneous Deposit
             //Columbite added 12/5/24 - Nyagi
-            new ItemInfo("raw_columbite", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_columbite", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
             //Phosphorite added 12/5/24 - Nyagi
-            new ItemInfo("raw_phosphorite", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_phosphorite", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
             //Fluorspar added 12/5/24 - Nyagi
-            new ItemInfo("raw_fluorspar", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_fluorspar", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
             //Zirconia added 12/5/24 - Nyagi
-            new ItemInfo("raw_zirconia", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_zirconia", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
           //Argyrodite Deposit
             //Germanite added 12/5/24 - Nyagi
-            new ItemInfo("raw_germanite", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_germanite", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
           //Ancient Mineral Spring Deposit
             //Spodumene added 12/5/24 - Nyagi
-            new ItemInfo("raw_spodumene", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_spodumene", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
             //Petalite added 12/5/24 - Nyagi
-            new ItemInfo("raw_petalite", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_petalite", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
             //Lepidolite added 12/5/24 - Nyagi
-            new ItemInfo("raw_lepidolite", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_lepidolite", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
             //Amblygonite added 12/5/24 - Nyagi
-            new ItemInfo("raw_amblygonite", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_amblygonite", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
           //Hydrocarbon Rich Deposit
             //Oil Sands added 12/5/24 - Nyagi
-            new ItemInfo("raw_oil_sands", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_oil_sands", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
             //Kerogen added 12/5/24 - Nyagi
-            new ItemInfo("raw_kerogen", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_kerogen", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
           //Fossil Deposit
             //Ancient Fossil added 12/5/24 - Nyagi
-            new ItemInfo("ancient_fossil", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("ancient_fossil", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
           //Endermorphic Deposit
             //End Organic Mush added 12/5/24 - Nyagi
-            new ItemInfo("end_organic_mush", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("end_organic_mush", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
             //Ender Pumice added 12/5/24 - Nyagi
-            new ItemInfo("ender_pumice", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("ender_pumice", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
           //Core Seam
             //Deep Ground Sample added 12/5/24 - Nyagi
-            new ItemInfo("deep_ground_sample", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("deep_ground_sample", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
           //Helium Deposit
             //items already exist, this is just here to keep track of deposit types
           //Lanthanithic Deposit
             //Monazite added 12/5/24 - Nyagi
-            new ItemInfo("raw_monazite", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_monazite", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
             //Cerite added 12/5/24 - Nyagi
-            new ItemInfo("raw_cerite", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_cerite", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
             //Allanite added 12/5/24 - Nyagi
-            new ItemInfo("raw_allanite", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_allanite", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
             //Bastnasite added 12/5/24 - Nyagi
-            new ItemInfo("raw_bastnasite", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_bastnasite", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
             //Xenotime added 12/5/24 - Nyagi
-            new ItemInfo("raw_xenotime", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("raw_xenotime", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
           //Void Seam
             //Cosmic Irradiated Flake Fragment added 12/5/24 - Nyagi
-            new ItemInfo("cosmic_irradiated_flake_fragment", Type.ITEM, Tab.MINERALS),
+            new ItemInfo("cosmic_irradiated_flake_fragment", Type.CUSTOM_TOOLTIP, Tab.MINERALS),
 
           //Ore-related drops
           //TODO: Find missing date
@@ -1189,30 +1274,13 @@ public class ModItems {
           //Pezzottaite
           new ItemInfo("pezzottaite", Type.ITEM, Tab.MINERALS),
           //Pezzottaite Dust
-          new ItemInfo("pezzottaite_dust", Type.ITEM, Tab.MINERALS),
+          new ItemInfo("pezzottaite_dust", Type.ITEM, Tab.MINERALS)
 
           //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
           // Sintered/Polished Tier 1 Items
           //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-          //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          // FLUID-ITEMS BELOW
-          //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          // Hydrocarbon Tar - Added 6/25/24
-          new ItemInfo.Bucket("bucket_of_hydrocarbon_tar", () -> Utils.fetchFluid(Utils.NBNB("hydrocarbon_tar_fluid"))),
-          new ItemInfo.Bucket("bucket_of_raw_wood_vinegar", () -> Utils.fetchFluid(Utils.NBNB("raw_wood_vinegar_fluid"))),
-          new ItemInfo.Bucket("bucket_of_pyroligneous_acid", () -> Utils.fetchFluid(Utils.NBNB("pyroligneous_acid_fluid"))),
-          new ItemInfo.Bucket("bucket_of_acetone", () -> Utils.fetchFluid(Utils.NBNB("acetone_fluid"))),
-          new ItemInfo.Bucket("bucket_of_gemstone_polish", () -> Utils.fetchFluid(Utils.NBNB("gemstone_polish_fluid"))),
-          new ItemInfo.Bucket("bucket_of_molten_skystone", () -> Utils.fetchFluid(Utils.NBNB("molten_skystone_fluid"))),
-          new ItemInfo.Bucket("bucket_of_heptafluoropropane", () -> Utils.fetchFluid(Utils.NBNB("heptafluoropropane_fluid"))),
-          new ItemInfo.Bucket("bucket_of_amorphous_cellulose", () -> Utils.fetchFluid(Utils.NBNB("amorphous_cellulose_fluid"))),
-          new ItemInfo.Bucket("bucket_of_endstone_leach_water", () -> Utils.fetchFluid(Utils.NBNB("endstone_leach_water_fluid"))),
-          new ItemInfo.Bucket("bucket_of_heavy_crude_oil", () -> Utils.fetchFluid(Utils.NBNB("heavy_crude_oil_fluid"))),
-          new ItemInfo.Bucket("bucket_of_petroleum", () -> Utils.fetchFluid(Utils.NBNB("petroleum_fluid"))),
-          new ItemInfo.Bucket("bucket_of_tailings", () -> Utils.fetchFluid(Utils.NBNB("tailings_fluid"))),
-          new ItemInfo.Bucket("bucket_of_lithium_alumino_solution", () -> Utils.fetchFluid(Utils.NBNB("lithium_alumino_solution_fluid")))
-
+          //NOTICE: Fluid bucket registration is no longer handled here, but it has been compressed into FluidInfo and ModFluids.
   );
 
   //This goes through the items and runs the method in ItemInfo to then register them.
